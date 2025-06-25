@@ -7,9 +7,10 @@ class Square:
 
     def __init__(self, size=0):
         """ This method allows us to initialize an object based on the structure defined inside of this class """
-        try:
-            self.__size = size
-            if size < 0:
-                raise ValueError("size must be >= 0")
-        except TypeError:
-            print("size must be an integer")
+        self.__size = size
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = size
+        
