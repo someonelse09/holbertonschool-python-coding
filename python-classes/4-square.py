@@ -34,7 +34,10 @@ class Square:
         """ This method prints the square
         according to given size and using the hash character
         """
-        for _ in range(self.__size):
-            for _ in range(self.__size):
-                print('#', end="")
+        if self.__size == 0:
             print()
+        else:
+            for _ in range(self.__size):
+                for _ in range(self.__size):
+                    print('#', end="")
+                print()
